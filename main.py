@@ -6,6 +6,16 @@ from kivy.app import App
 from kivy.uix.label import Label
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
+from kivy.uix.button import Button
+
+class But(Button):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
+    def on_press(self):
+        #if not self.collide_point(touch.x, touch.y):
+        #    return False
+        print("I'm touched")
 
 
 class LoginScreen(GridLayout):
@@ -23,6 +33,7 @@ class LoginScreen(GridLayout):
         # adding password field
         self.password = TextInput(password=True, multiline=False)
         self.add_widget( self.password )
+        self.add_widget( But(text="Click here") )
 
 
 class MyApp(App):
@@ -32,4 +43,5 @@ class MyApp(App):
 
 
 if __name__ == '__main__':
+    # help(Button)
     MyApp().run()
