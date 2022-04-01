@@ -38,6 +38,10 @@ class LoginScreen(GridLayout):
     def on_touch_move(self, touch):
         print('Moved')
         return True
+    
+    def on_touch_up(self, touch):
+        print('UP')
+        return True
 
 
 class MyApp(App):
