@@ -35,6 +35,10 @@ class LoginScreen(GridLayout):
         self.add_widget( self.password )
         self.add_widget( But(text="Click here") )
 
+    def on_touch_move(self, touch):
+        print('Moved')
+        return True
+
 
 class MyApp(App):
 
