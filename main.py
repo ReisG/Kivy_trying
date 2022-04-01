@@ -7,6 +7,7 @@ from kivy.uix.label import Label
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
+from kivy.clock import Clock
 
 class But(Button):
     def __init__(self, **kwargs):
@@ -38,7 +39,7 @@ class LoginScreen(GridLayout):
     def on_touch_move(self, touch):
         print('Moved')
         return True
-    
+
     def on_touch_up(self, touch):
         print('UP')
         return True
@@ -51,5 +52,6 @@ class MyApp(App):
 
 
 if __name__ == '__main__':
-    # help(Button)
+    # help(kivy)
+    event = Clock.schedule_once(lambda dt:print(f"i'm called, {dt}"), 0.5)
     MyApp().run()
