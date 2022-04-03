@@ -46,12 +46,10 @@ class LoginScreen(GridLayout):
 
 
 class MyApp(App):
-
     def build(self):
         return LoginScreen()
 
-
 if __name__ == '__main__':
     # help(kivy)
-    event = Clock.schedule_once(lambda dt:print(f"i'm called, {dt}"), 0.5)
+    # event = Clock.schedule_once(lambda dt:print(f"i'm called, {dt}"), 0.5)
     MyApp().run()
