@@ -8,6 +8,22 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.clock import Clock
+from kivy.event import EventDispatcher
+
+
+class MyEventDispatcher(EventDispatcher):
+    def __init__(self, **kwargs):
+        self.register_event_type('on_test')
+        super(MyEventDispatcher, self).__init__(**kwargs)
+
+    def do_something(self, value):
+        # when do_something is called, the 'on_test' event will be
+        # dispatched with the value
+        self.dispatch('on_test', value)
+
+    def on_test(self, *args):
+        print("I am dispatched", args)
+
 
 class But(Button):
     def __init__(self, **kwargs):
@@ -46,12 +62,16 @@ class LoginScreen(GridLayout):
 
 
 class MyApp(App):
-
     def build(self):
         return LoginScreen()
 
 
 if __name__ == '__main__':
     # help(kivy)
-    event = Clock.schedule_once(lambda dt:print(f"i'm called, {dt}"), 0.5)
+    # event = Clock.schedule_once(lambda dt:print(f"i'm called, {dt}"), 0.5)
+    ev = MyEventDispatcher()
+    ev.bind(on_test=lambda x: print('Hello', x) )
+    ev.do_something(20)
+
     MyApp().run()
+    quit()
