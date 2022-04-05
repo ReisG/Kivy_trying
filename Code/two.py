@@ -2,7 +2,7 @@ from kivy.app import App
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
 
-def foo(turn, f):
+def foo(object, mouse_motion_type):
     print('hello')
 
 class FirstApp(App):
