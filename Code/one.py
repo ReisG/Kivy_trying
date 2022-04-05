@@ -69,9 +69,9 @@ class MyApp(App):
 if __name__ == '__main__':
     # help(kivy)
     # event = Clock.schedule_once(lambda dt:print(f"i'm called, {dt}"), 0.5)
-    ev = MyEventDispatcher()
-    ev.bind(on_test=lambda x: print('Hello', x) )
-    ev.do_something(20)
+    # ev = MyEventDispatcher()
+    # ev.bind(on_test=lambda x, dt: print('Hello', x, dt) )
+    # ev.do_something(20)
 
     MyApp().run()
     quit()
