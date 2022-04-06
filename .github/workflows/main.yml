@@ -19,6 +19,7 @@ jobs:
     runs-on: windows-latest
     
     steps:
+    - uses: actions/checkout@v1
       run: echo Hello there
       
       
@@ -27,6 +28,7 @@ jobs:
     runs-on: windows-latest
     
     steps:
+    - uses: actions/checkout@v1
       run: |
         echo Testing functionality
         echo dir
