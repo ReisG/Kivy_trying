@@ -1,0 +1,32 @@
+on:
+  workflow_dispatch:
+  
+  push:
+    branches:
+    - main
+    - workflows
+  
+  pull_request:
+    branches:
+    - main
+    - workflows
+
+
+jobs:
+
+  building:
+    name: Trying to build the project
+    runs-on: windows-latest
+    
+    steps:
+      run: echo Hello there
+      
+      
+  func_check:
+    name: Checking functionality
+    runs-on: windows-latest
+    
+    steps:
+      run: |
+        echo Testing functionality
+        echo dir
