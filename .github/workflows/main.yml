@@ -19,6 +19,7 @@ jobs:
     runs-on: windows-latest
     
     steps:
+    - name: printing hello
       run: echo Hello there
       
       
@@ -27,6 +28,7 @@ jobs:
     runs-on: windows-latest
     
     steps:
+    - name: Test
       run: |
         echo Testing functionality
         echo dir
