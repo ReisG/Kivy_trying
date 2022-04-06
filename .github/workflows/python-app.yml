@@ -15,7 +15,7 @@ permissions:
 jobs:
   build:
 
-    runs-on: windows10
+    runs-on: ubunty-latest
 
     steps:
     - uses: actions/checkout@v3
